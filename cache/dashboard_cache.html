@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../frontend/css/side_user.css?v=1">
+    <link rel="stylesheet" href="../frontend/css/dashboard.css?v=1">
+    <title>My Homepage</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../frontend/css/side_user.css">
+</head>
+
+<body>
+    <!-- Mobile Sidebar - Only visible on mobile devices -->
+    <aside id="mobile-sidebar">
+        <div class="sidebar-header">
+            <img src="../frontend/sidebar/img/kolaxus.jpg" alt="Kolaxus Logo" class="logo">
+            <button id="close-sidebar" aria-label="Close sidebar">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <li class="active">
+                    <a href="../User/dashboard.php">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>My Homepage</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="../User/user_hackathon.php">
+                        <i class='bx bxs-trophy'></i>
+                        <span>My Hackathons</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="../User/user_challenge.php">
+                        <i class='bx bxs-game'></i>
+                        <span>My Challenges</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../frontend/logout.php">
+                        <i class='bx bx-log-out'></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay"></div>
+</body>
+
+</html>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../frontend/css/side_user.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header id="main-header">
+        <!-- Mobile Header View -->
+        <div class="mobile-header">
+            <button id="toggle-sidebar" aria-label="Toggle sidebar">
+                <i class='bx bx-menu'></i>
+            </button>
+
+            <div class="logo-container">
+                <img src="../frontend/sidebar/img/kolaxus.jpg" alt="Kolaxus Logo" class="logo">
+            </div>
+
+            <div class="mobile-profile" id="mobile-profile">
+                <img src="../frontend/student_upload/account.png" alt="Student Card">
+            </div>
+
+            <!-- Mobile Profile Dropdown -->
+            <div class="profile-dropdown" id="mobile-profile-dropdown">
+                <div class="profile-header">
+                    <img src="../frontend/student_upload/account.png"
+                        alt="Student Card">
+                    <div class="profile-info">
+                        <h4>User</h4>
+                        <p>adrinazureenzakaria@gmail.com                        </p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <a href="#" class="profile-action mobile-view-profile">
+                        <i class='bx bx-user'></i>
+                        <span>View Profile</span>
+                    </a>
+                    <a href="#" class="profile-action">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="../frontend/logout.php" class="profile-action logout">
+                        <i class='bx bx-log-out'></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Header View -->
+        <div class="desktop-header">
+            <div class="logo-container">
+                <img src="../frontend/sidebar/img/kolaxus.jpg" alt="Kolaxus Logo" class="logo">
+            </div>
+
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="active">
+                        <a href="../User/dashboard.php">
+                            <i class='bx bxs-dashboard'></i>
+                            <span>My Homepage</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="../User/user_hackathon.php">
+                            <i class='bx bxs-trophy'></i>
+                            <span>My Hackathons</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="../User/user_challenge.php">
+                            <i class='bx bxs-game'></i>
+                            <span>My Challenges</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch" hidden>
+                    <label for="theme-switch">
+                        <i class='bx bx-sun'></i>
+                        <i class='bx bx-moon'></i>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="desktop-profile" id="desktop-profile">
+                    <img src="../frontend/student_upload/account.png"
+                        alt="Student Card">
+                    <span class="profile-text">My Profile</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+
+                <div class="profile-dropdown" id="desktop-profile-dropdown">
+                    <div class="profile-header">
+                        <img src="../frontend/student_upload/account.png"
+                            alt="Student Card">
+                        <div class="profile-info">
+                            <h4>User                            </h4>
+                            <p>adrinazureenzakaria@gmail.com                            </p>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <a href="#" class="profile-action desktop-view-profile">
+                            <i class='bx bx-user'></i>
+                            <span>View Profile</span>
+                        </a>
+                        <a href="#" class="profile-action">
+                            <i class='bx bx-cog'></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="../frontend/logout.php" class="profile-action logout">
+                            <i class='bx bx-log-out'></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile profile click handler
+            const mobileProfile = document.getElementById('mobile-profile');
+            const mobileProfileDropdown = document.getElementById('mobile-profile-dropdown');
+
+            if (mobileProfile && mobileProfileDropdown) {
+                mobileProfile.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileProfileDropdown.classList.toggle('active');
+
+                    // Close desktop dropdown if open
+                    const desktopProfileDropdown = document.getElementById('desktop-profile-dropdown');
+                    if (desktopProfileDropdown && desktopProfileDropdown.classList.contains('active')) {
+                        desktopProfileDropdown.classList.remove('active');
+                    }
+                });
+            }
+
+            // Mobile View Profile button click handler
+            const mobileViewProfileBtn = document.querySelector('.mobile-view-profile');
+            if (mobileViewProfileBtn) {
+                mobileViewProfileBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Hide dropdown first
+                    if (mobileProfileDropdown) {
+                        mobileProfileDropdown.classList.remove('active');
+                    }
+
+                    // Show SweetAlert
+                    Swal.fire({
+                        title: 'Student Card',
+                        imageUrl: '../frontend/student_upload/account.png',
+                        imageAlt: 'Profile Image',
+                        confirmButtonText: 'Close',
+                        customClass: {
+                            popup: 'swal2-popup',
+                            image: 'swal2-image'
+                        }
+                    });
+                });
+            }
+
+            // Desktop profile dropdown toggle
+            const desktopProfile = document.getElementById('desktop-profile');
+            const desktopProfileDropdown = document.getElementById('desktop-profile-dropdown');
+
+            if (desktopProfile && desktopProfileDropdown) {
+                desktopProfile.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    desktopProfileDropdown.classList.toggle('active');
+
+                    // Close mobile dropdown if open
+                    if (mobileProfileDropdown && mobileProfileDropdown.classList.contains('active')) {
+                        mobileProfileDropdown.classList.remove('active');
+                    }
+                });
+            }
+
+            // Desktop View Profile button click handler
+            const desktopViewProfileBtn = document.querySelector('.desktop-view-profile');
+            if (desktopViewProfileBtn) {
+                desktopViewProfileBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Hide dropdown first
+                    if (desktopProfileDropdown) {
+                        desktopProfileDropdown.classList.remove('active');
+                    }
+
+                    // Show SweetAlert
+                    Swal.fire({
+                        title: 'Student Card',
+                        imageUrl: '../frontend/student_upload/account.png',
+                        imageAlt: 'Profile Image',
+                        confirmButtonText: 'Close',
+                        customClass: {
+                            popup: 'swal2-popup',
+                            image: 'swal2-image'
+                        }
+                    });
+                });
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function () {
+                if (desktopProfileDropdown) {
+                    desktopProfileDropdown.classList.remove('active');
+                }
+                if (mobileProfileDropdown) {
+                    mobileProfileDropdown.classList.remove('active');
+                }
+            });
+
+            // Prevent closing when clicking inside dropdowns
+            const profileDropdowns = document.querySelectorAll('.profile-dropdown');
+            profileDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            });
+
+            // Handle window resize - close dropdowns when resizing
+            let resizeTimer;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    // Close all dropdowns on resize
+                    if (desktopProfileDropdown) {
+                        desktopProfileDropdown.classList.remove('active');
+                    }
+                    if (mobileProfileDropdown) {
+                        mobileProfileDropdown.classList.remove('active');
+                    }
+                }, 250);
+            });
+        });
+    </script>
+</body>
+
+</html>    <div id="main-content" class="main-content">
+        <div class="content-container">
+            <!-- Enhanced Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-sun"></i>                    </div>
+                    <div class="welcome-text">
+                        <h1>
+                            Good Morning, reen!                        </h1>
+                        <div class="welcome-subtext">Welcome to my homepage. Here's what's happening today.
+                        </div>
+                        <div class="welcome-date">Friday, March 7, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vouchers & Discounts Page -->
+            <div class="row">
+                <div class="col-8">
+                    <div class="slide-container">
+                        <div class="slide fade"><div class="loyalty-type">Food &amp; Beverage</div><img src="../Admin/upload/67bfd3ee543e5_grab.png" alt="Example 1 - 10%"><div class="program-info"><div class="program-name">Example 1 - 10%</div><div class="program-description">example</div></div></div><div class="slide fade"><div class="loyalty-type">Health &amp; Beauty</div><img src="../Admin/upload/67bfd58920b84_foodpanda.jpg" alt="Example 2 - RM 10 off"><div class="program-info"><div class="program-name">Example 2 - RM 10 off</div><div class="program-description">example</div></div></div>                        <a href="#" class="prev" title="Previous">&#10094;</a>
+                        <a href="#" class="next" title="Next">&#10095;</a>
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot" data-index="0"></span><span class="dot" data-index="1"></span>                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Joined Hackathon</span>
+                            <span class="stat-value">6</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Joined Challenge</span>
+                            <span class="stat-value">2</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Completed Hackathon</span>
+                            <span class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Completed Challenge</span>
+                            <span class="stat-value">0</span>
+                        </div>
+                        <!-- <div class="stat-item">
+                            <span class="stat-label">My Vouchers</span>
+                            <span class="stat-value">0</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hackathon Page -->
+            <h1 class="pull-left">Upcoming Hackathons</h1>
+            <div class="container-fluid">
+                <div class="container mt-5 mb-3">
+                    <div class="row">
+                        <div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Online</div><div class="card-header"><div class="c-details"><h6>Web Design</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=1" class="btn">View</a></div><div class="image-container single-image"><img src="../Hackathon/upload/67888162108f4_bloomz.png" alt="Web Design" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM20,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: February 9, 2025 (12:00 PM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Offline</div><div class="card-header"><div class="c-details"><h6>web designer</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=2" class="btn">View</a></div><div class="image-container single-image"><img src="../Hackathon/upload/678dcfe7b2588_google.png" alt="web designer" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM20,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: January 9, 2025 (12:00 PM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Online</div><div class="card-header"><div class="c-details"><h6>web designer</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=4" class="btn">View</a></div><div class="image-container single-image"><img src="../Hackathon/upload/678dcea4ce945_google.png" alt="web designer" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM20,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: March 14, 2025 (12:00 PM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Online</div><div class="card-header"><div class="c-details"><h6>Figma Design</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=5" class="btn">View</a></div><div class="image-container two-images"><img src="../Hackathon/upload/678dcedd20036_amazon.png" alt="Figma Design" class="img-fluid"><img src="../Hackathon/upload/678dcedd20474_kolaxus.jpg" alt="Figma Design" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM10,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: March 15, 2025 (02:30 PM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Offline</div><div class="card-header"><div class="c-details"><h6>Figma Design</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=6" class="btn">View</a></div><div class="image-container single-image"><img src="../Hackathon/upload/6784c6f373c70_amazon.png" alt="Figma Design" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM5,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: January 28, 2025 (11:00 AM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Offline</div><div class="card-header"><div class="c-details"><h6>Figma Design</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=7" class="btn">View</a></div><div class="image-container two-images"><img src="../Hackathon/upload/6788a4e1aa032_google.png" alt="Figma Design" class="img-fluid"><img src="../Hackathon/upload/6788a4e1aa5a0_amazon.png" alt="Figma Design" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM5,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: January 10, 2025 (11:00 AM)</span></div></div></div></div></div><div class="col-md-4 mb-4"><div class="card"><div class="hackathon-type">Offline</div><div class="card-header"><div class="c-details"><h6>Figma Design</h6><span>Organized by Company</span></div><a href="read_hackathon.php?hackathon_id=8" class="btn">View</a></div><div class="image-container two-images"><img src="../Hackathon/upload/affin.png" alt="Figma Design" class="img-fluid"><img src="../Hackathon/upload/Agile-Methodology-in-System-Development-source-Okeke2021-retrieved-from.png" alt="Figma Design" class="img-fluid"></div><div class="card-body"><div class="prizes-container"><i class="fas fa-trophy"></i><div class="text1"><span class="prizes">Prizes: RM6,000</span></div></div><div class="date-container"><i class="far fa-calendar-alt"></i><div class="text1"><span class="end-date">Ends on: January 30, 2025 (10:00 AM)</span></div></div></div></div></div>                    </div>
+                </div>
+            </div>
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example - Sticky Footer</title>
+    <link rel="stylesheet" href="../frontend/css/footer.css">
+</head>
+
+<body>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Solutions Column -->
+                <div class="footer-column">
+                    <h2>Solutions</h2>
+                    <ul>
+                        <li><a href="https://www.kolaxus.net/open-innovation/">Open Innovation</a></li>
+                        <li><a href="https://www.kolaxus.net/hackathon/">Hackathon</a></li>
+                        <li><a href="https://www.kolaxus.net/startup-challenge/">Startup Challenge</a></li>
+                        <li><a href="https://www.kolaxus.net/student-challenge/">Student Challenge</a></li>
+                        <li><a href="https://www.kolaxus.net/developer-challenge/">Developer Challenge</a></li>
+                        <li><a href="https://www.kolaxus.net/talent-hiring/">Talent Hiring</a></li>
+                        <li><a href="https://www.kolaxus.net/intern/">Intern</a></li>
+                        <li><a href="https://www.kolaxus.net/tech-startup-sourcing/">Tech & Startup Sourcing</a></li>
+                        <li><a href="https://www.kolaxus.net/kolaxus-market-expansion-advisory/">Market Expansion Advisory</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="https://www.kolaxus.net/about-us/">About Us</a></li>
+                        <li><a href="https://www.kolaxus.net/business-events/">Business Events</a></li>
+                        <li><a href="https://www.kolaxus.net/coaching-mentorship/">Coaching & Mentorship</a></li>
+                        <li><a href="https://www.kolaxus.net/partner/">Partners</a></li>
+                        <li><a href="https://www.kolaxus.net/kolaxus-nexgen/">NexGen</a></li>
+                        <li><a href="https://www.kolaxus.net/kolaxus-startups/">Startups</a></li>
+                        <li><a href="https://www.kolaxus.net/kolaxus-developers/">Developers</a></li>
+                        <li><a href="https://www.kolaxus.net/kolaxus-researcher-community/">Researchers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="https://www.kolaxus.net/terms-of-use/">Terms of use</a></li>
+                        <li><a href="https://www.kolaxus.net/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="https://www.kolaxus.net/cookie-policy/">Cookie Policy</a></li>
+                    </ul>
+
+                    <div class="newsletter">
+                        <h3>Subscribe to our newsletter</h3>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Email">
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-column">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><a href="https://www.kolaxus.net/contact-us/">Contact Us</a></li>
+                    </ul>
+
+                    <div class="company-info">
+                        <p>SIVX Sdn Bhd</p>
+                        <p>Business Reg. No: 201901035301 (1344631-A)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2024 Kolaxus. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../frontend/js/dashboard.js?v=1"></script>
+    <script src="../frontend/js/side_user.js?v=1"></script>
+
+</body>
+
+</html>
+

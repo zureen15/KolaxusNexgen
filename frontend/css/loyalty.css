@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .wrapper {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.h2 {
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: #fcf8E3;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+body.dark .pull-left {
+    color: #ffffff;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.card-img-top {
+    height: 200px;
+    /* Adjusted height for better appearance */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-subtitle {
+        font-size: 1rem;
+    }
+}

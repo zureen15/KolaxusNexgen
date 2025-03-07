@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+h1,
+h3 {
+  margin-bottom: 1rem;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.progress-container .progress,
+.progress-container::before {
+  height: 4px;
+  width: var(--progress-width);
+  top: calc(var(--step-size)/ 2);
+  left: 50%;
+  translate: -50% -50%
+}
+
+.completed,
+h1 {
+  text-align: center
+}
+
+* {
+  font-family: Roboto, roboto condensed;
+  padding: 0;
+  margin: 0;
+  transition: .3s ease-in-out
+}
+
+:root {
+  --main-color: #ef392d;
+  --dark-color: #eb6c63;
+  --step-color: #ced7e0;
+  --step-size: 32px;
+  --steps: 4;
+  --progress-width: calc((var(--steps) - 1) / var(--steps) * 100%);
+  font-size: 16px;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8F6F7;
+  overflow-x: hidden;
+  color: #003566;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: clamp(1rem, 2vw + 1rem, 1.25rem)
+}
+
+label {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  outline-color: var(--main-color);
+  border: 1px solid #d3d3d3;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  width: 100%;
+  height: fit-content;
+  text-align: start;
+  gap: 10px;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button {
+  background-color: var(--main-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: .875rem;
+  transition: .3s;
+}
+
+input[type=tel] {
+  direction: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button:active,
+button:hover {
+  background-color: var(--dark-color);
+}
+
+button:disabled {
+  opacity: .8
+}
+
+button:focus {
+  outline-color: #333
+}
+
+button[type=submit] {
+  background-color: #333
+}
+
+button[type=submit]:active,
+button[type=submit]:hover {
+  background-color: #444
+}
+
+form {
+  margin-block: auto;
+}
+
+.form-wizard {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: min(600px, 100%);
+  box-shadow: 0 4px 16px rgba(167, 21, 84, .1);
+}
+
+.password-field,
+.progress-container {
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  background-color: var(--step-color);
+  position: absolute;
+}
+
+.progress-container .progress,
+.progress-container li.done::before {
+  background-color: var(--main-color);
+}
+
+.progress-container .progress {
+  position: absolute;
+  z-index: 2;
+  transform: scaleleX(0);
+  transform-origin: left;
+  transition: .3s;
+}
+
+html[dir=rtl] .progress-container .progress {
+  transform-origin: right;
+}
+
+.progress-container ol {
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  counter-reset: step-number;
+  position: relative;
+  z-index: 3;
+}
+
+.progress-container li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--step-color);
+  transition: .3s linear .3s;
+  text-align: center;
+  font-size: 0;
+}
+
+.progress-container li::before {
+  counter-increment: step-number;
+  content: counter(step-number);
+  background-color: var(--step-color);
+  width: var(--step-size);
+  height: var(--step-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  transition: .3s linear .3s;
+  font-size: 1rem;
+}
+
+@media screen and (max-width:490px) {
+  .progress-container li {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .selector {
+    margin-bottom: 10px;
+    gap: 8px;
+    position: flex;
+  }
+
+  .form-wizard {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: 100%;
+    width: min(600px, 100%);
+    box-shadow: 0 4px 16px rgba(167, 21, 84, .1);
+    overflow-x: hidden;
+  }
+}
+
+.progress-container li:where(.done, .current) {
+  color: #333;
+  font-weight: 500;
+}
+
+.progress-container li.current::before {
+  background-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(21, 126, 167, .25);
+}
+
+.steps-container {
+  display: flex;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step {
+  flex: 1 0 100%;
+  padding: 1.5rem .5rem;
+  opacity: 0;
+  transition: opacity .3s;
+  height: fit-content;
+  display: grid;
+  gap: 10px;
+}
+
+.step.current {
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding-inline: 8px;
+}
+
+.controls button {
+  flex: 1;
+}
+
+.completed h3 {
+  margin-bottom: 8px;
+}
+
+.completed svg {
+  width: 100px;
+  height: 100px;
+  stroke: yellowgreen;
+}
+
+select.option {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.completed:not([hidden])~* {
+  display: none;
+}
+
+.selector:last-child {
+  margin-right: 0;
+}
+
+select.option {
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.social-media-container {
+  margin-bottom: 16px;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+input[type=password] {
+  padding-right: 40px;
+}
+
+#interest-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+  grid-gap: 10px; /* Adjust the gap between checkboxes */
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type=checkbox] {
+  margin-right: 8px;
+  transform: scale(1.2);
+  width: fit-content;
+  height: fit-content;
+}
+
+#otherInput {
+  margin-top: 10px;
+}
+
+/* Ensure the Select2 container takes full width */
+.select2-container {
+  width: 100% !important; /* Force full width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .select2-container {
+      width: 100% !important; /* Ensure full width on mobile */
+  }
+}
